@@ -3,16 +3,27 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPasswor
 import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore'
 
 // Replace the values below with your Firebase project config
-const firebaseConfig = {
-  apiKey: "REPLACE_ME",
-  authDomain: "REPLACE_ME",
-  projectId: "REPLACE_ME",
-  storageBucket: "REPLACE_ME",
-  messagingSenderId: "REPLACE_ME",
-  appId: "REPLACE_ME"
-}
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const app = initializeApp(firebaseConfig)
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBUK1LjyPGkTZJqmgjUSNqjswAJTrgX2FI",
+  authDomain: "react-roadmap-tracker.firebaseapp.com",
+  projectId: "react-roadmap-tracker",
+  storageBucket: "react-roadmap-tracker.firebasestorage.app",
+  messagingSenderId: "821626618769",
+  appId: "1:821626618769:web:8f47f3ea18aa47b6eb1030",
+  measurementId: "G-BKQ8X83WQR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 export const auth = getAuth(app)
 export const googleProvider = new GoogleAuthProvider()
 export const db = getFirestore(app)
